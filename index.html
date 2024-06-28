@@ -16,7 +16,7 @@
             height: 100vh;
             margin: 0;
             padding: 0;
-            background-image: url('https://cdn.discordapp.com/attachments/1240406446483705876/1256042674041913366/DJI_0314.JPG?ex=667f5465&is=667e02e5&hm=04ae7de3c43d5237ea56209280f98da76812f80c228ff7eb60960c720a2680e0&'); /* Replace with your image URL */
+            background-image: url('https://cdn.discordapp.com/attachments/1240406446483705876/1256042674041913366/DJI_0314.JPG?ex=667f5465&is=667e02e5&hm=04ae7de3c43d5237ea56209280f98da76812f80c228ff7eb60960c720a2680e0&');
             background-size: cover;
             background-position: center;
         }
@@ -83,9 +83,8 @@
             console.log("Chrome Web Detector initialized successfully.");
         }
     </script>
-    </style>
 </head>
-<body>
+<body onload="detectChrome()">
     <header>
         <img src="https://cdn.discordapp.com/attachments/1225437613880643594/1242628984827678720/WEXE_LOGO.png?ex=667ea6ac&is=667d552c&hm=e7e981e24bd6f3206d3846f4c663cc101551bf3730a4bd1a9d7c404fabc8a714&" alt="Logo" class="logo">
     </header>
@@ -119,8 +118,8 @@
             measurementId: "G-WWKTX5PN7B" // Optional for analytics
         };
 
-       // Initialize Firebase
-       const app = initializeApp(firebaseConfig);
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
         const auth = getAuth(app); // Get the auth instance
 
@@ -155,7 +154,7 @@
     <div class="content">
         <h1>Weather.Exe Employee Login</h1>
         <p>Please login to the left of this message!</p>
-        <p><B>Version 1.0</B></p>
+        <p><b>Version 1.0</b></p>
     </div>
 </body>
 </html>

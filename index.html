@@ -69,8 +69,19 @@
         .content {
             padding: 20px;
             text-align: center;
-            color: white;
+            color: white;  
         }
+    </style>
+    <script>
+        function detectChrome() {
+            var userAgent = navigator.userAgent.toLowerCase();
+            var isChrome = /chrome/.test(userAgent) && !/edge|opr|brave|vivaldi/.test(userAgent);
+            if (!isChrome) {
+                alert("Please use Google Chrome to access this page.");
+                window.location.href = "https://www.google.com/chrome/";
+            }
+        }
+    </script>
     </style>
 </head>
 <body>

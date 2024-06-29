@@ -74,12 +74,10 @@
     </style>
     <script>
         function detectChrome() {
-            const isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
-            const userAgent = navigator.userAgent.toLowerCase();
-            const isChromium = userAgent.includes('chromium');
-            const isGoogleChrome = userAgent.includes('chrome') && !isChromium && isChrome;
+            const userAgent = navigator.userAgent;
+            const isChrome = /Chrome/.test(userAgent) && /Google Inc/.test(navigator.vendor);
 
-            if (!isGoogleChrome) {
+            if (!isChrome) {
                 alert("Please use Google Chrome to access this page.");
                 window.location.href = "https://www.google.com/chrome/";
             } else {
@@ -109,7 +107,7 @@
         // Import Firebase SDK modules
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"; // Only import signInWithEmailAndPassword, not getAuth again
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
         // Firebase configuration
         const firebaseConfig = {
@@ -119,13 +117,13 @@
             storageBucket: "weatherexelogin.appspot.com",
             messagingSenderId: "334313845483",
             appId: "1:334313845483:web:21fc75fccff95bf152c4ae",
-            measurementId: "G-WWKTX5PN7B" // Optional for analytics
+            measurementId: "G-WWKTX5PN7B"
         };
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
-        const auth = getAuth(app); // Get the auth instance
+        const auth = getAuth(app);
 
         console.log("Firebase initialized successfully.");
 

@@ -74,7 +74,8 @@
     </style>
     <script>
         function detectChrome() {
-            const isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isChrome = /chrome/.test(userAgent) && /google inc/.test(navigator.vendor);
             if (!isChrome) {
                 alert("Please use Google Chrome to access this page.");
                 window.location.href = "https://www.google.com/chrome/";

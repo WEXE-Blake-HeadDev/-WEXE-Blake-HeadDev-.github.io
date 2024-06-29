@@ -74,8 +74,8 @@
     </style>
     <script>
         function detectChrome() {
-            const userAgent = navigator.userAgent;
-            const isChrome = /Chrome/.test(userAgent) && /Google Inc/.test(navigator.vendor);
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isChrome = userAgent.includes("chrome") && !userAgent.includes("edg") && !userAgent.includes("opr");
 
             if (!isChrome) {
                 alert("Please use Google Chrome to access this page.");

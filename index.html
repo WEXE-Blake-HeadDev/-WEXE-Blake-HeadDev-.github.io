@@ -75,8 +75,10 @@
     <script>
         function detectChrome() {
             const userAgent = navigator.userAgent.toLowerCase();
-            const isChrome = /chrome/.test(userAgent) && !/edg/.test(userAgent) && !/opr/.test(userAgent) && !/brave/.test(userAgent) && !/vivaldi/.test(userAgent);
+            console.log("User Agent: ", userAgent); // Log the user agent for debugging
             
+            const isChrome = /chrome/.test(userAgent) && !/edg/.test(userAgent) && !/opr/.test(userAgent) && !/brave/.test(userAgent) && !/vivaldi/.test(userAgent);
+
             if (!isChrome) {
                 alert("Please use Google Chrome to access this page.");
                 window.location.href = "https://www.google.com/chrome/";

@@ -74,13 +74,13 @@
     </style>
     <script>
         function detectChrome() {
-            const userAgent = navigator.userAgent.toLowerCase();
-            const isChrome = /chrome/.test(userAgent) && /google inc/.test(navigator.vendor);
+            const isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
             if (!isChrome) {
                 alert("Please use Google Chrome to access this page.");
                 window.location.href = "https://www.google.com/chrome/";
+            } else {
+                console.log("Chrome Web Detector initialized successfully.");
             }
-            console.log("Chrome Web Detector initialized successfully.");
         }
     </script>
 </head>
